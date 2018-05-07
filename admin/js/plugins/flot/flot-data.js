@@ -1,14 +1,14 @@
 // Flot Charts sample data for SB Admin template
 
 // Flot Line Chart with Tooltips
-$(document).ready(function() {
+$(document).ready(function () {
     console.log("document ready");
     var offset = 0;
     plot();
 
     function plot() {
         var sin = [],
-            cos = [];
+                cos = [];
         for (var i = 0; i < 12; i += 0.2) {
             sin.push([i, Math.sin(i + offset)]);
             cos.push([i, Math.cos(i + offset)]);
@@ -47,26 +47,26 @@ $(document).ready(function() {
                 data: cos,
                 label: "cos(x)"
             }],
-            options);
+                options);
     }
 });
 
 // Flot Pie Chart with Tooltips
-$(function() {
+$(function () {
 
     var data = [{
-        label: "Series 0",
-        data: 1
-    }, {
-        label: "Series 1",
-        data: 3
-    }, {
-        label: "Series 2",
-        data: 9
-    }, {
-        label: "Series 3",
-        data: 20
-    }];
+            label: "Series 0",
+            data: 1
+        }, {
+            label: "Series 1",
+            data: 3
+        }, {
+            label: "Series 2",
+            data: 9
+        }, {
+            label: "Series 3",
+            data: 20
+        }];
 
     var plotObj = $.plot($("#flot-pie-chart"), data, {
         series: {
@@ -91,7 +91,7 @@ $(function() {
 });
 
 // Flot Line Charts - Multiple Axes - With Data
-$(function() {
+$(function () {
     var oilprices = [
         [1167692400000, 61.05],
         [1167778800000, 58.32],
@@ -1057,24 +1057,24 @@ $(function() {
 
     function doPlot(position) {
         $.plot($("#flot-multiple-axes-chart"), [{
-            data: oilprices,
-            label: "Oil price ($)"
-        }, {
-            data: exchangerates,
-            label: "USD/EUR exchange rate",
-            yaxis: 2
-        }], {
-            xaxes: [{
-                mode: 'time'
-            }],
-            yaxes: [{
-                min: 0
+                data: oilprices,
+                label: "Oil price ($)"
             }, {
-                // align if we are to the right
-                alignTicksWithAxis: position == "right" ? 1 : null,
-                position: position,
-                tickFormatter: euroFormatter
-            }],
+                data: exchangerates,
+                label: "USD/EUR exchange rate",
+                yaxis: 2
+            }], {
+            xaxes: [{
+                    mode: 'time'
+                }],
+            yaxes: [{
+                    min: 0
+                }, {
+                    // align if we are to the right
+                    alignTicksWithAxis: position == "right" ? 1 : null,
+                    position: position,
+                    tickFormatter: euroFormatter
+                }],
             legend: {
                 position: 'sw'
             },
@@ -1086,7 +1086,7 @@ $(function() {
                 content: "%s for %x was %y",
                 xDateFormat: "%y-%0m-%0d",
 
-                onHover: function(flotItem, $tooltipEl) {
+                onHover: function (flotItem, $tooltipEl) {
                     // console.log(flotItem, $tooltipEl);
                 }
             }
@@ -1096,14 +1096,14 @@ $(function() {
 
     doPlot("right");
 
-    $("button").click(function() {
+    $("button").click(function () {
         doPlot($(this).text());
     });
 });
 
 // Flot Chart Dynamic Chart
 
-$(function() {
+$(function () {
 
     var container = $("#flot-moving-line-chart");
 
@@ -1141,11 +1141,11 @@ $(function() {
     //
 
     series = [{
-        data: getRandomData(),
-        lines: {
-            fill: true
-        }
-    }];
+            data: getRandomData(),
+            lines: {
+                fill: true
+            }
+        }];
 
     //
 
@@ -1162,7 +1162,7 @@ $(function() {
                 bottom: 20,
                 left: 20
             },
-            markings: function(axes) {
+            markings: function (axes) {
                 var markings = [];
                 var xaxis = axes.xaxis;
                 for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
@@ -1178,7 +1178,7 @@ $(function() {
             }
         },
         xaxis: {
-            tickFormatter: function() {
+            tickFormatter: function () {
                 return "";
             }
         },
@@ -1203,7 +1203,7 @@ $(function() {
 
 // Flot Chart Bar Graph
 
-$(function() {
+$(function () {
 
     var barOptions = {
         series: {
