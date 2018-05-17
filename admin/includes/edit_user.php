@@ -1,6 +1,5 @@
 <?php
-
-if(isset($_GET['edit_user'])){
+if (isset($_GET['edit_user'])) {
     $the_user_id = $_GET['edit_user'];
     $query = "SELECT * FROM users WHERE user_id = {$the_user_id}";
     $select_users_query = mysqli_query($connection, $query);
@@ -21,15 +20,14 @@ if (isset($_POST['edit_user'])) {
     $user_lastname = $_POST['user_lastname'];
     $user_role = $_POST['user_role'];
 
-    /*$post_image = $_FILES['image']['name'];
-    $post_image_temp = $_FILES['image']['tmp_name'];*/
+    /* $post_image = $_FILES['image']['name'];
+      $post_image_temp = $_FILES['image']['tmp_name']; */
 
     $username = $_POST['username'];
     $user_email = $_POST['user_email'];
     $user_password = $_POST['user_password'];
 //    $post_date = date('d-m-y');
     //$post_comment_count = 4;
-
 //    move_uploaded_file($post_image_temp, "../images/$post_image");
     $query = "UPDATE users SET ";
     $query .= "user_firstname = '{$user_firstname}', ";
@@ -55,15 +53,15 @@ if (isset($_POST['edit_user'])) {
     <div class="form-group">
         <select name="user_role" id="">
             <option value="subscriber"><?php echo $user_role; ?></option>
-           <?php
-                if($user_role == 'admin'){
-                    echo "<option value='subscriber'>subscriber</option>";
-                } else {
-                    echo "<option value='admin'>admin</option>";
-                }
-            ?>
-            
-            
+<?php
+if ($user_role == 'admin') {
+    echo "<option value='subscriber'>subscriber</option>";
+} else {
+    echo "<option value='admin'>admin</option>";
+}
+?>
+
+
         </select>
     </div>
     <!--<div class="form-group">
