@@ -38,7 +38,7 @@
                         <a href="./posts.php">View All Posts</a>
                     </li>
                     <li>
-                        <a href="posts.php?source=add_post">Add Posts</a>
+                        <a href="posts.php?source=add_post">Add Post</a>
                     </li>
                 </ul>
             </li>
@@ -62,7 +62,7 @@
                 </ul>
             </li>
             <li>
-                <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> Profile </a>
+                <a href="profile.php"><i class="fa fa-fw fa-dashboard"></i> Profile </a>
             </li>
         </ul>
     </div>
