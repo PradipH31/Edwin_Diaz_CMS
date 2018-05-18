@@ -47,6 +47,8 @@ if (isset($_POST['update_post'])) {
     $query .= "WHERE post_id = {$the_post_id}";
     $update_post = mysqli_query($connection, $query);
     confirmQuery($update_post);
+    
+    echo "<p class='bg-success'>Post Updated. <a href='../post.php?p_id={$the_post_id}'>View Post</a> or <a href='posts.php'>Edit more posts</a></p>";
 }
 ?>
 <form action="" method="post" enctype="multipart/form-data">
@@ -73,8 +75,16 @@ if (isset($_POST['update_post'])) {
         <input value="<?php echo $post_author; ?>" type="text" class="form-control" name="post_author">
     </div>
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input value="<?php echo $post_status; ?>" type="text" class="form-control" name="post_status">
+        <select name="post_status" id="">
+            <option value='<?php echo $post_status; ?>'><?php echo $post_status; ?></option>
+            <?php
+                if($post_status == 'published') {
+                    echo "<option value='draft'>Draft</option>";
+                } else {
+                    echo "<option value='published'>Published</option>";
+                }
+            ?>
+        </select>
     </div>
     <div class="form-group">
         <img width="100" src="../images/<?php echo $post_image; ?>" alt="">

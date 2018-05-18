@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -29,8 +29,19 @@
                 </li>
                 <!--<li>
                     <a href="#">Services</a>
-                </li>
-                <li>
+                </li>-->
+                <?php
+                    if(isset($_SESSION['user_role'])){
+                        echo "Logged in";
+                        if(isset($_GET['p_id'])){
+                            $the_post_id = $_GET['p_id'];
+                            echo "<li><a href='admin/posts.php?source=edit_post&p_id={$the_post_id}'>Edit Post</a></li>";
+                        }
+                    } else {
+                        echo "<h1>Not logged in</h1>";
+                    }
+                ?>
+                <!--<li>
                     <a href="#">Contact</a>
                 </li>-->
             </ul>
