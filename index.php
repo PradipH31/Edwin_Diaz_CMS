@@ -26,7 +26,7 @@
                 $post_status = $row['post_status'];
 
                 if ($post_status == 'published') {
-                    ?>                    
+                    ?>
                     <h1 class="page-header">
                         Page Heading
                         <small>Secondary Text</small>
@@ -46,8 +46,9 @@
                     </a>
                     <hr>
                     <p><?php echo $post_content; ?></p>
-                    <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-                    <hr>                    
+                    <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span
+                                class="glyphicon glyphicon-chevron-right"></span></a>
+                    <hr>
                     <?php
                 }
             }
