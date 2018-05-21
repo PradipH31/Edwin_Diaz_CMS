@@ -1,5 +1,8 @@
 <?php include "includes/admin_header.php"; ?>
 <div id="wrapper">
+    <?php 
+        
+    ?>
     <!-- Navigation -->
     <?php include "includes/admin_navigation.php"; ?>
     <div id="page-wrapper">
@@ -13,8 +16,6 @@
                     </h1>
                 </div>
             </div>
-
-
             <!-- /.row -->
 
             <div class="row">
